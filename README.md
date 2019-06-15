@@ -105,8 +105,29 @@ We recommend docs be placed in JSdoc provide this for teams that want to keep th
 Examples are great way to explain what `@api` in your component will do. Including one example for every `@api` is recommended.
 
 ```text
-src/modules/namespace/name/__examples__/
+src/modules/namespace/name/__examples__/withFoo.spec.js
+                                       /withFoo/withFoo.js
+                                               /withFoo.html
+                                               /withFoo.css
 ```
+
+#### JSdoc (recommended)
+
+JSdoc at the top of your `WithFoo` class will be used.
+
+```js
+/**
+ * This example sets the foo attribute.
+ *
+ * @order 1
+ */
+```
+
+> **Order:** Set example order. Useful for showing basic examples first.
+
+#### Markdown (optional)
+
+You can override anything in the JSdoc with a markdown file the `withFoo` folder.
 
 ### Tests `__tests__` (optional)
 
