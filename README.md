@@ -64,22 +64,6 @@ By default we only care about `@api` for documentation. Any other properties or 
 @api foo = 'Hello World';
 ```
 
-### Component Markdown File (optional)
-
-```text
-src/modules/namespace/name/name.md
-```
-
-By default we'll using the description from JSdoc above the class definition. As some find this ugly we'll override anything with the contents of the markdown if provided.
-
-```md
-# Override Component Title
-
-We recommend docs be placed in JSdoc provide this for teams that want to keep their components simple.
-
-[order]: 1
-```
-
 ### Namespace Markdown File (recommended)
 
 ```text
@@ -99,6 +83,22 @@ This namespace contains components to help with your app.
 
 > **Icon:** Icon is an optional single pathed SVG file. We recommend using [MaterialDesignIcons.com](https://materialdesignicons.com). Defaults to `puzzle-outline`.<br/>
 > **Order:** For multiple namespaces set a priority.
+
+### Component Markdown File (optional)
+
+```text
+src/modules/namespace/name/name.md
+```
+
+By default we'll using the description from JSdoc above the class definition. As some find this ugly we'll override anything with the contents of the markdown if provided.
+
+```md
+# Override Component Title
+
+We recommend docs be placed in JSdoc provide this for teams that want to keep their components simple.
+
+[order]: 1
+```
 
 ### Examples `__examples__` (required)
 
