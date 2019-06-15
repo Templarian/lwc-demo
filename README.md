@@ -13,18 +13,19 @@ git clone lwc-demo
 cd lwc-demo
 npm install
 npm link file://your/module
+npm run watch
 ```
 
-> `link` allows you to document and see the changes real time with `npm run watch` at `localhost:3000`.
+> Learn more about `npm link`. This will allow live reload of a local component.
 
-When your ready to generate the static website (perfect for github.io).
+When you are ready to generate the static website...
 
 - `npm run build`
 - Copy the contents of the `dist` folder.
 
 ## Documentation
 
-This uses webpack to read everything and generate documentation from various markdown files and jsdoc comments in your code. Adding a few files shoul
+This uses webpack to read everything and generate documentation from various jsdoc comments in your code and markdown files. Examples for each file and their location described below.
 
 ### JSdoc
 
@@ -32,7 +33,7 @@ This uses webpack to read everything and generate documentation from various mar
 src/modules/namespace/name/name.js   <namespace-name>
 ```
 
-Using JSdoc can be a great way to document your component and various helper
+Using JSdoc can be a great way to document your component inside of the JavaScript file.
 
 #### Class
 
@@ -42,12 +43,12 @@ Using JSdoc can be a great way to document your component and various helper
  * 
  * > **Note:** Parsed with markdown!
  * 
- * @name Icon
  * @order 1
  */
+ export default class Name extends LightningElement { }
 ```
 
-> **Order:** Set order of component.
+> **Order:** Set priority of component on the page.
 
 #### Attribute (`@api`)
 
