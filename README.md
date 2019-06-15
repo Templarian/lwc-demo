@@ -3,6 +3,7 @@
 Focus on writing your Lightining web components and leave the documentation generation to `lwc-demo`. Features include:
 
 - Built with LWC!
+- Ideal for https://github.io
 - Easy to navigte with a mobile friendly design
 - JSdoc parsing
 - Markdown with smart defaults
