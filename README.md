@@ -45,7 +45,7 @@ Using JSdoc can be a great way to document your component inside of the JavaScri
  * 
  * @order 1
  */
- export default class Name extends LightningElement { }
+export default class Name extends LightningElement { }
 ```
 
 > **Order:** Set priority of component on the page.
@@ -81,7 +81,7 @@ This namespace contains components to help with your app.
 [order]: 1
 ```
 
-> **Icon:** Icon is an optional single pathed SVG file. We recommend using [MaterialDesignIcons.com](https://materialdesignicons.com). Defaults to `puzzle-outline`.<br/>
+> **Icon:** Icon is an optional single pathed SVG file. Use any icon from [MaterialDesignIcons.com](https://materialdesignicons.com). Defaults to `puzzle-outline`.<br/>
 > **Order:** For multiple namespaces set a priority.
 
 ### Component Markdown File (optional)
@@ -95,7 +95,7 @@ By default we'll using the description from JSdoc above the class definition. As
 ```md
 # Override Component Title
 
-We recommend docs be placed in JSdoc provide this for teams that want to keep their components simple.
+Override the JSdoc description. Ideal for teams that do not want to clutter their files.
 
 [order]: 1
 ```
@@ -121,6 +121,7 @@ JSdoc at the top of your `WithFoo` class will be used.
  *
  * @order 1
  */
+export default class WithFoo extends LightningElement { }
 ```
 
 > **Order:** Set example order. Useful for showing basic examples first.
