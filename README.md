@@ -9,7 +9,9 @@ Focus on writing your Lightining web components and leave the documentation gene
 - Markdown with smart defaults
 
 ```sh
-npm install lwc-demo
+git clone lwc-demo
+cd lwc-demo
+npm install
 npm link file://your/module
 ```
 
