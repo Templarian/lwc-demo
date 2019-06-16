@@ -12,7 +12,8 @@ Focus on writing your Lightining web components and leave the documentation gene
 git clone lwc-demo
 cd lwc-demo
 npm install
-npm link file://your/module
+npm link ../path-to-module
+npm link module-name
 npm run watch
 ```
 
