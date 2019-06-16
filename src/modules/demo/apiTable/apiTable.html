@@ -1,0 +1,21 @@
+<template>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <template for:each={items} for:item="item">
+      <tr key={item.name}>
+        <td>{item.name}</td>
+        <td>
+          <template iterator:it={item.types}>
+            <code key={it.value}>{it.value}</code>
+            <template if:false={it.last}>, </template>
+          </template>
+        </td>
+        <td>{item.description}</td>
+      </tr>
+    </template>
+  </table>
+</template>

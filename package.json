@@ -1,0 +1,56 @@
+{
+  "name": "lwc-demo",
+  "version": "1.0.0",
+  "description": "Generate Lightning web component documentation.",
+  "main": "index.js",
+  "dependencies": {
+    "glob": "^7.1.4",
+    "lwc-services": "^1.2.0"
+  },
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "jsdoc-api": "^5.0.1",
+    "lint-staged": "^8.2.0",
+    "marked": "^0.6.2",
+    "webpack-virtual-modules": "^0.1.10"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "lint-staged": {
+    "**/*.{css,html,js,json,md,yaml,yml}": [
+      "prettier --write"
+    ],
+    "**/modules/**": [
+       "eslint"
+    ],
+    "*": [
+      "git add"
+    ]
+  },
+  "scripts": {
+    "build": "lwc-services build -w webpack.config.js",
+    "lint": "eslint ./src/**/*.js",
+    "prettier": "prettier --write '**/*.{css,html,js,json,md,yaml,yml}'",
+    "prettier:verify": "prettier --list-different '**/*.{css,html,js,json,md,yaml,yml}'",
+    "serve": "lwc-services build && lwc-services serve",
+    "test:unit": "lwc-services test",
+    "test:unit:coverage": "lwc-services test --coverage",
+    "test:unit:debug": "lwc-services test --debug",
+    "test:unit:watch": "lwc-services test --watch",
+    "watch": "lwc-services watch -w webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Templarian/lwc-demo.git"
+  },
+  "keywords": [
+    "lightning web component"
+  ],
+  "author": "Austin Andrews",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Templarian/lwc-demo/issues"
+  },
+  "homepage": "https://github.com/Templarian/lwc-demo#readme"
+}

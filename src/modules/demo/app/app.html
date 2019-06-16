@@ -1,0 +1,144 @@
+<template>
+    <mdi-icon></mdi-icon>
+    <div class="mobile-menu">
+        <svg viewBox="0 0 24 24">
+            <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path>
+        </svg>
+        <svg viewBox="0 0 24 24">
+            <path d="M21,15.61L19.59,17L14.58,12L19.59,7L21,8.39L17.44,12L21,15.61M3,6H16V8H3V6M3,13V11H13V13H3M3,18V16H16V18H3Z"></path>
+        </svg>
+    </div>
+    <div class="wrapper">
+        <div class="aside">
+            <div class="card">
+                <template if:true={isLoading}>
+                    <div class="loading">
+                        <svg viewBox="0 0 24 24" class="spin">
+                            <path d="M12,4V2C6.48,2 2,6.48 2,12H4C4,7.58 7.58,4 12,4Z"></path>
+                        </svg>
+                    </div>
+                </template>
+                <template if:true={selectedNamespace}>
+                    <ul>
+                        <template for:each={selectedNamespace.components} for:item="component">
+                            <li key={component.name}>
+                                <span>{component.name} <code>{component.tag}</code></span>
+                                <ul>
+                                    <template if:false={component.hasExamplesFolder}>
+                                        <div class="error">
+                                            <code>{component.namespace}/{component.name}/__examples__</code> missing.
+                                        </div>
+                                    </template>
+                                    <template if:true={component.examples.length}>
+                                        <template for:each={component.examples} for:item="example">
+                                            <li key={example.name}>
+                                                <a href="#icon-basic">{example.name}</a>
+                                            </li>
+                                        </template>
+                                    </template>
+                                </ul>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+            </div>
+            <div class="details">View <a href="demo.json">demo.json</a></div>
+        </div>
+        <template if:true={isLoading}>
+            <h1>
+                <svg viewBox="0 0 24 24" class="spin">
+                    <path d="M12,4V2C6.48,2 2,6.48 2,12H4C4,7.58 7.58,4 12,4Z"></path>
+                </svg>
+                Loading...
+            </h1>
+            <p>Loading <code>data.json</code>...</p>
+        </template>
+        <template if:true={moreThanOneNamespace}>
+            <div class="error">
+                <p>
+                    <strong>Error:</strong> Excluding 
+                    <template if:false={excludes.length}>
+                        <span> no </span>
+                    </template>
+                    <template if:true={excludes.length}>
+                        <template iterator:it={excludes}>
+                            <code key={it.value}>{it.value}</code>
+                            <template if:false={it.last}>, </template>
+                        </template>
+                    </template>
+                    <span>namespaces, but found </span>
+                    <template iterator:it={namespaces}>
+                        <code key={it.value.name}>{it.value.name}</code>
+                        <template if:false={it.last}>, </template>
+                    </template>.
+                    Only one namespace is supported at this time.
+                </p>
+                <ul>
+                    <li>Add <code>includes: ["namespace"]</code> to the <code>webpack.config.js</code>.</li>
+                    <li>Or append additional namespaces to the <code>excludes</code> in <code>webpack.config.js</code>.</li>
+                </ul>
+            </div>
+        </template>
+        <h1>
+            <svg viewBox="0 0 24 24">
+                <path d="M2,2H8V4H16V2H22V8H20V16H22V22H16V20H8V22H2V16H4V8H2V2M16,8V6H8V8H6V16H8V18H16V16H18V8H16M4,4V6H6V4H4M18,4V6H20V4H18M4,18V20H6V18H4M18,18V20H20V18H18Z"></path>
+            </svg>
+            MDI Lighting web components
+        </h1>
+        <p>The <code>@mdi/lwc</code> module contains two components. The <code>mdi-icon</code> component renders a SVG path from the <code>@mdi/js</code> module or any SVG path.</p>
+        <template if:true={selectedNamespace}>
+            <template for:each={selectedNamespace.components} for:item="component">
+                <section key={component.name}>
+                    <h2 id={component.name}>
+                        <a class="header-anchor" href="#tag" aria-hidden="true">#</a>
+                        <span>{component.name} <code>{component.tag}</code></span>
+                    </h2>
+                    <template if:true={component.jsdoc.length}>
+                        <demo-description jsdoc={component.jsdoc}></demo-description>
+                        <demo-api-table jsdoc={component.jsdoc}></demo-api-table>
+                    </template>
+                    <template if:false={component.hasExamplesFolder}>
+                        <div class="error">
+                            <code>{component.namespace}/{component.name}/__examples__</code> missing.
+                        </div>
+                    </template>
+                    <template if:true={component.examples.length}>
+                        <template for:each={component.examples} for:item="example">
+                            <section key={example.name}>
+                                <h3 id={example.name}>
+                                    <a class="header-anchor" href="#icon-basic" aria-hidden="true">#</a>
+                                    {example.name} <small>({example.subName})</small>
+                                </h3>
+                                <template if:true={example.errors.length}>
+                                    <div class="error">
+                                        <ul>
+                                            <template for:each={example.errors} for:item="error">
+                                                <li key={error.code}>{error.message}</li>
+                                            </template>
+                                        </ul>
+                                    </div>
+                                </template>
+                                <template if:true={example.files.length}>
+                                    <div class="tabs">
+                                        <ul>
+                                            <template for:each={example.files} for:item="file">
+                                                <li key={file.name}>
+                                                    <button>{file.name}</button>
+                                                </li>
+                                            </template>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-contents">
+                                        <template for:each={example.files} for:item="file">
+                                            <pre key={file.name}><code>{file.source}</code></pre>
+                                        </template>
+                                    </div>
+                                </template>
+                            </section>
+                        </template>
+                    </template>
+                </section>
+            </template>
+        </template>
+    </div>
+</template>

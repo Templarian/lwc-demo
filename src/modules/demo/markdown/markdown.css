@@ -1,0 +1,39 @@
+:host {
+  color: #16325c;
+}
+blockquote {
+  border-left: 4px solid #DDD;
+  margin: 0;
+  padding: 0.05rem 1rem;
+}
+blockquote p {
+  margin: 0.75rem 0;
+}
+pre code {
+  display: block;
+  position: relative;
+  padding: 0.5rem;
+  border: 1px solid #16325c;
+  border-radius: 0.25rem;
+}
+pre code.language-javascript::before {
+  content: 'JS';
+}
+pre code.language-css::before {
+  content: 'CSS';
+}
+pre code.language-html::before {
+  content: 'HTML';
+}
+pre code::before {
+  content: 'Text';
+  color: #FFF;
+  right: 0;
+  top: 0;
+  position: absolute;
+  border-bottom: 1px solid #16325c;
+  background: #16325c;
+  border-bottom-left-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+}

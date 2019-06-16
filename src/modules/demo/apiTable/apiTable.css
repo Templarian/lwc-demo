@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  border: 1px solid #16325c;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+}
+table {
+  width: 100%;
+  border-spacing: 0;
+  line-height: 1.25rem;
+}
+table th {
+  border-bottom: 1px solid #16325c;
+  padding: 0.2rem 0.25rem;
+  text-align: left;
+}
+table tr:not(:last-child) td {
+  border-bottom: 1px dotted #16325c;
+}
+table tr td:not(:last-child) {
+  border-right: 1px dotted #16325c;
+}
+table td {
+  padding: 0.2rem 0.25rem;
+}
