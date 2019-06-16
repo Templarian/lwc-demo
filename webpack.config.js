@@ -1,8 +1,8 @@
-var GenerateDemoPlugin = require('./scripts/webpack/GenerateDemoPlugin');
+var LwcDemoWebpackPlugin = require('lwc-demo-webpack-plugin');
 
 module.exports = {
   plugins: [
-    new GenerateDemoPlugin({
+    new LwcDemoWebpackPlugin({
       modules: ['mdi']
     })
   ]
