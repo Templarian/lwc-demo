@@ -138,3 +138,33 @@ Want to show off your components tests. Test counts if found will show to the ri
 ### WDIO `__wdio__` (optional)
 
 Similar to tests we highly encourage integration testing. These will also appear to the right in the header if found.
+
+## Theme
+
+Themes are managed through several dynamic components.
+
+```html
+<demo-title
+ path={namespace.icon}
+ label={component.name}></demo-title>
+<demo-description
+  namespace={component.namespace}></demo-description>
+<demo-component-title
+  namespace={component.namespace}
+  component={component}></demo-component-title>
+<demo-component-description
+  namespace={component.namespace}
+  component={component}></demo-component-description>
+<demo-example-title
+  namespace={component.namespace}
+  component={component}
+  example={name}></demo-example-title>
+<demo-example-description
+  namespace={component.namespace}
+  component={component}
+  example={name}></demo-example-description>
+<demo-example
+  namespace={component.namespace}
+  component={component}
+  example={name}></demo-example>
+```
