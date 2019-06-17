@@ -106,8 +106,7 @@ Override the JSdoc description. Ideal for teams that do not want to clutter thei
 Examples are great way to explain what `@api` in your component will do. Including one example for every `@api` is recommended.
 
 ```text
-src/modules/namespace/name/__examples__/withFoo.spec.js
-                                       /withFoo/withFoo.js
+src/modules/namespace/name/__examples__/withFoo/withFoo.js
                                                /withFoo.html
                                                /withFoo.css
 ```
