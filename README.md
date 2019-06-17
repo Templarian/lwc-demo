@@ -53,7 +53,7 @@ export default class Name extends LightningElement { }
 
 #### Attribute (`@api`)
 
-By default we only care about `@api` for documentation. Any other properties or methods will be ignored.
+By default `@api` is the main form of documentation. Any other properties or methods will be ignored.
 
 ```js
 /**
@@ -91,7 +91,7 @@ This namespace contains components to help with your app.
 src/modules/namespace/name/name.md
 ```
 
-By default we'll using the description from JSdoc above the class definition. As some find this ugly we'll override anything with the contents of the markdown if provided.
+By default the JSdoc description above the component class will be used. To not clutter the JS file one can used a markdown file to override the `title`, `description`, or `order`.
 
 ```md
 # Override Component Title
@@ -137,7 +137,7 @@ Want to show off your components tests. Test counts if found will show to the ri
 
 ### WDIO `__wdio__` (optional)
 
-Similar to tests we highly encourage integration testing. These will also appear to the right in the header if found.
+Similar to tests it is highly encouraged to provide integration testing. These will appear to the right in the header if found.
 
 ## Theme
 
