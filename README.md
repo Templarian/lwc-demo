@@ -103,7 +103,7 @@ Override the JSdoc description. Ideal for teams that do not want to clutter thei
 
 ### Examples `__examples__` (required)
 
-Examples are great way to explain what `@api` in your component will do. Including one example for every `@api` is recommended.
+Examples are great way to explain what each `@api` in your component will do. Including one example for every `@api` is recommended.
 
 ```text
 src/modules/namespace/name/__examples__/withFoo/withFoo.js
