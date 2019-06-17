@@ -5,5 +5,8 @@ module.exports = {
     new LwcDemoWebpackPlugin({
       modules: ['mdi']
     })
-  ]
+  ],
+  resolve: {
+    symlinks: false
+  }
 };

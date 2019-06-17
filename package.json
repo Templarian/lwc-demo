@@ -4,9 +4,10 @@
   "description": "Generate Lightning web component documentation.",
   "main": "index.js",
   "dependencies": {
-    "lwc-services": "^1.2.1"
+    "lwc-services": "^1.2.2"
   },
   "devDependencies": {
+    "@mdi/lwc": "0.0.1",
     "husky": "^1.3.1",
     "lint-staged": "^8.2.0",
     "marked": "^0.6.2"
